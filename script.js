@@ -6,3 +6,11 @@ function displayTime() {
 }
 
 setInterval(displayTime, 1000);
+
+$(".saveBtn").on("click", function(){
+    var hour = $(this).parent().attr("id");
+    var value = $(this).siblings(".planText");
+
+    localStorage.setItem(hour, JSON.stringify(value));
+
+});
